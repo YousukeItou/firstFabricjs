@@ -33,6 +33,9 @@ var greenRect = new fabric.Rect({
   angle: 45
 });
 
+// set stroke
+greenRect.set({ strokeWidth: 5, stroke: 'rgba(0,0,0,1)' });
+
 canvas.add(greenRect);
 
 // move red rectangle
