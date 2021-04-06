@@ -1,14 +1,4 @@
-// Fabric.jsで作成したオブジェクトをimgタグへ貼りつける処理
-
-// create new canvas element
-// this is same as below
-// var canvas = document.createElement("canvas");
-// canvas.width = 900;
-// canvas.height = 900;
-// var fCanvas = new fabric.Canvas(canvas);
-var fCanvas = new fabric.Canvas();
-fCanvas.setHeight(900);
-fCanvas.setWidth(900);
+var fCanvas = new fabric.Canvas('', {width: 900, height: 900});
 
 // create Rectangle obj
 var rect = new fabric.Rect(
@@ -43,5 +33,16 @@ fCanvas.getElement().toBlob(function(blob) {
     exImg.src = imgUrl;
 });
 
-// export PNG
-document.getElementById('testJ').src = fCanvas.toDataURL();
+function download(url,name){
+    // make the link. set the href and download. emulate dom click
+    var link = document.getElementById("fabric-download");
+    link.setAttribute("href", url);
+    link.setAttribute("download", name);
+    // add bellow as wothout button.onClick()
+    //link.click();
+}
+
+function downloadImg(canvas,name){
+    //  convert the canvas to a data url and download it.
+    download(fCanvas.toDataURL(),name+'.png');
+}
