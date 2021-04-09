@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+    <head>
+    </head>
+    <body>
+        <!-- <canvas id="testf" width="900" height="900"></canvas> -->
+        <div style="display: flex; flex-flow: column;">
+            <div>
+                <div style="display: flex; flex-flow: row;">
+                    <div>
+                        <canvas id="eventDemo"></canvas>
+                    </div>
+                    <div style="display: flex; flex-flow: column;">
+                        <form method="post" action="example.cgi">
+                            <p>X座標<input type="text" name="x" id="x-axis" value="300"></p>
+                            <p>Y座標<input type="text" name="y" id="y-axis" value="300"></p>
+                            <p>半径<input type="text" name="radius" id="radius" value="20"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img id="testI" />
+            </div>
+            <div>
+                <img id="testJ" />
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.3.1/fabric.min.js"></script>
+        <script type="text/javascript" src="./FabricEventDemo.js"></script>
+    </body>
+</html>
